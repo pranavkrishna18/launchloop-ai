@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-obsidian: #171815;
+    --color-graphite: #24251F;
+    --color-graphite-light: #2E3028;
+    --color-warm-paper: #F5F0E6;
+    --color-pure-ink: #20211D;
+    --color-lime: #D5FF45;
+    --color-tangerine: #FF7547;
+    --color-sage: #A9B49B;
+    --color-soft-gray: #8D8E84;
+    --border-atelier: #2D2E26;
+    --border-light: #3D4034;
+  }
+
+  body {
+    background-color: var(--color-obsidian);
+    color: var(--color-warm-paper);
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  /* Custom minimal atelier scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #171815;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2E3028;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8D8E84;
+  }
+}
+
+@layer utilities {
+  .atelier-card {
+    background-color: #24251F;
+    border: 1px solid #2D2E26;
+  }
+
+  .atelier-card-paper {
+    background-color: #24251F;
+    color: #F5F0E6;
+    border: 1px solid #3D4034;
+  }
+
+  /* Universal High-Contrast Accessible Form Controls */
+  input, select, textarea {
+    background-color: #1A1B16;
+    color: #FFFFFF !important;
+    border-color: #3D4034;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #7E8075 !important;
+    opacity: 1;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: #D5FF45 !important;
+    outline: none !important;
+  }
+
+  /* Strict Autofill Protection against Chrome/Edge white-on-white text bug */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active,
+  select:-webkit-autofill,
+  textarea:-webkit-autofill {
+    -webkit-text-fill-color: #FFFFFF !important;
+    -webkit-box-shadow: 0 0 0px 1000px #1A1B16 inset !important;
+    box-shadow: 0 0 0px 1000px #1A1B16 inset !important;
+    caret-color: #D5FF45 !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Native select dropdown popups */
+  select option {
+    background-color: #24251F !important;
+    color: #FFFFFF !important;
+  }
+
+  .atelier-grid-bg {
+    background-image: radial-gradient(rgba(213, 255, 69, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .btn-lime {
+    background-color: #D5FF45;
+    color: #171815;
+    font-weight: 600;
+    transition: all 0.15s ease-in-out;
+  }
+  .btn-lime:hover {
+    background-color: #C4ED36;
+    transform: translateY(-1px);
+  }
+  .btn-lime:active {
+    transform: translateY(0);
+  }
+
+  .btn-tangerine {
+    background-color: #FF7547;
+    color: #171815;
+    font-weight: 600;
+    transition: all 0.15s ease-in-out;
+  }
+  .btn-tangerine:hover {
+    background-color: #EE6334;
+  }
+
+  .btn-outline-atelier {
+    background-color: transparent;
+    color: #F5F0E6;
+    border: 1px solid #2D2E26;
+    transition: all 0.15s ease-in-out;
+  }
+  .btn-outline-atelier:hover {
+    border-color: #D5FF45;
+    color: #D5FF45;
+  }
+}
+
+/* Reduced motion consideration */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
