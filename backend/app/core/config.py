@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     LOG_LEVEL: str = "INFO"
     
     # Security / CORS
-    ALLOWED_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173"
+    ALLOWED_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173,https://launchloop-ai.vercel.app"
     ADMIN_DEMO_SECRET: str = "dev-demo-admin-passkey-change-me"
     
     # Supabase Database & Auth

@@ -16,7 +16,7 @@ services:
       - key: LOG_LEVEL
         value: INFO
       - key: ALLOWED_ORIGINS
-        sync: false
+        value: "http://localhost:5173,http://127.0.0.1:5173,https://launchloop-ai.vercel.app"
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_ANON_KEY
